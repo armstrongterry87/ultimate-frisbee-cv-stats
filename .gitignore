@@ -1,0 +1,86 @@
+# ---------------------------------------------------------------------------
+# Third-party reference checkouts.
+# These are other people's repositories, each with its own .git directory.
+# Committing them would either create broken submodule stubs or vendor ~90k
+# lines of MIT code into this repo as if we wrote it. Reconstruct them with the
+# two clone commands in README.md instead.
+# ---------------------------------------------------------------------------
+reference/
+yt to mp4/
+
+# ---------------------------------------------------------------------------
+# Game footage. Multi-GB, copyrighted broadcast video. Never commit.
+# GitHub rejects files over 100MB regardless.
+# ---------------------------------------------------------------------------
+data/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.avi
+
+# Model weights and training artifacts — large binaries, tracked elsewhere.
+*.pt
+*.pth
+*.onnx
+*.engine
+runs/
+checkpoints/
+
+# Derived pipeline outputs — regenerable from source video, not source of truth.
+out/
+output/
+cache/
+*.parquet
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets — API keys for UFA stats, Roboflow, etc.
+.env
+.env.*
+!.env.example
